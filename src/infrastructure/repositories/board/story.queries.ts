@@ -43,6 +43,7 @@ export const storyColumns = {
     string | null
   >`if(${assignees.id} is null, null, concat(${assignees.firstName}, ' ', ${assignees.lastName}))`,
   storyPoints: stories.storyPoints,
+  estimatedHours: stories.estimatedHours,
   priority: stories.priority,
   dueDate: stories.dueDate,
   commentCount: sql<number>`(select count(*) from ${comments} where ${comments.storyId} = ${stories.id})`.mapWith(Number),
@@ -135,6 +136,7 @@ export async function getStoriesForExport(projectId: string): Promise<ProjectExp
       assigneeName: sql<string | null>`if(${exportAssignees.id} is null, null, concat(${exportAssignees.firstName}, ' ', ${exportAssignees.lastName}))`,
       assigneeEmail: exportAssignees.email,
       storyPoints: stories.storyPoints,
+      estimatedHours: stories.estimatedHours,
       priority: stories.priority,
       dueDate: stories.dueDate,
       createdAt: stories.createdAt,
@@ -236,6 +238,7 @@ export async function updateStory(
     description: string;
     assigneeId: string | null;
     storyPoints: number | null;
+    estimatedHours: number | null;
     sprintId: string | null;
     columnId: string | null;
     priority: StoryDto["priority"];

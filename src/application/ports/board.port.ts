@@ -44,6 +44,7 @@ export interface BoardRepo {
       description: string;
       assigneeId: string | null;
       storyPoints: number | null;
+      estimatedHours: number | null;
       sprintId: string | null;
       columnId: string | null;
       priority: StoryPriority;

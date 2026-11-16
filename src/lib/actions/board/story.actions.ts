@@ -57,6 +57,7 @@ export async function updateStoryFullAction(
         description: storySchema.shape.description,
         assigneeId: storyDetailsSchema.shape.assigneeId,
         storyPoints: storyDetailsSchema.shape.storyPoints,
+        estimatedHours: storyDetailsSchema.shape.estimatedHours,
         sprintId: storyDetailsSchema.shape.sprintId,
         columnId: storyDetailsSchema.shape.columnId,
         priority: storyDetailsSchema.shape.priority,

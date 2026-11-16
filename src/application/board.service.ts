@@ -177,6 +177,7 @@ export const boardService = {
       description: titleDesc.description,
       assigneeId: details.assigneeId,
       storyPoints: details.storyPoints,
+      estimatedHours: details.estimatedHours,
       priority: details.priority,
       dueDate: details.dueDate,
       sprintId,
